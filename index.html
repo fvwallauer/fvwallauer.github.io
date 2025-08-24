@@ -1,9 +1,289 @@
-<html>
+<!doctype html>
+<html lang="en">
+<head>
+  <!--
+    🎓 Researcher/Student Website Template — single-file starter
 
+    How to use:
+    1) Replace ALL CAPS placeholders with your info.
+    2) Delete sections you don't need (or duplicate for more content).
+    3) Commit as index.html to your GitHub Pages repo (e.g., username.github.io or <repo>/docs/).
+    4) Optional: add a /assets/ folder for images like profile.jpg and logos.
+
+    Accessible, responsive, lightweight. No build tools or frameworks.
+  -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YOUR NAME — Research</title>
+  <meta name="description" content="YOUR NAME — YOUR ROLE (e.g., PhD student in Astrophysics). Research interests: ..." />
+
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="assets/favicon.ico" />
+
+  <!-- Color theme & minimal styles -->
+  <style>
+    :root {
+      --accent: #5a67d8;        /* change to your favorite color */
+      --bg: #ffffff;
+      --text: #1a202c;
+      --muted: #4a5568;
+      --card: #f7fafc;
+      --border: #e2e8f0;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1016;
+        --text: #e2e8f0;
+        --muted: #a0aec0;
+        --card: #111827;
+        --border: #1f2937;
+      }
+    }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text); background: var(--bg);
+    }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 1rem; }
+    header { position: sticky; top: 0; backdrop-filter: blur(6px); background: color-mix(in oklab, var(--bg) 70%, transparent); border-bottom: 1px solid var(--border); }
+    nav { display: flex; align-items: center; gap: .75rem; padding: .75rem 0; flex-wrap: wrap; }
+    nav a { color: var(--muted); text-decoration: none; padding: .4rem .6rem; border-radius: .5rem; }
+    nav a:hover, nav a:focus { background: var(--card); color: var(--text); outline: none; }
+    .brand { margin-right: auto; font-weight: 700; color: var(--text); }
+    .cta { color: white; background: var(--accent); }
+
+    .hero { display: grid; grid-template-columns: 1fr; gap: 1.25rem; padding: 2.5rem 0 1rem; align-items: center; }
+    .hero img { width: 140px; height: 140px; border-radius: 999px; object-fit: cover; border: 3px solid var(--border); }
+    .hero h1 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin: 0; }
+    .hero p { margin: .25rem 0 0; color: var(--muted); }
+    .quicklinks { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
+    .quicklinks a { border: 1px solid var(--border); padding: .35rem .6rem; border-radius: .5rem; text-decoration: none; color: var(--text); }
+
+    section { padding: 2rem 0 0; }
+    h2 { font-size: 1.4rem; margin: 0 0 .75rem; border-bottom: 1px solid var(--border); padding-bottom: .4rem; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media (min-width: 800px) { .grid-2 { grid-template-columns: 1.25fr .75fr; } }
+
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: .75rem; padding: 1rem; }
+    .muted { color: var(--muted); }
+    .tag { font-size: .75rem; padding: .1rem .45rem; border-radius: .4rem; border: 1px solid var(--border); }
+    .list { list-style: none; margin: 0; padding: 0; }
+    .list li { margin-bottom: .75rem; }
+    .pub-authors { font-style: italic; }
+    .pub-venue { color: var(--muted); }
+
+    footer { margin: 3rem 0 2rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .95rem; }
+
+    /* Skip link for accessibility */
+    .skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .skip-link:focus { position: static; width: auto; height: auto; background: var(--accent); color: white; padding: .5rem; border-radius: .5rem; }
+  </style>
+
+  <!-- Structured data (optional but helpful for Google Scholar/knowledge panels) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "YOUR NAME",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "YOUR INSTITUTION"
+    },
+    "jobTitle": "YOUR ROLE (e.g., PhD Candidate)",
+    "url": "https://YOUR-USERNAME.github.io/",
+    "sameAs": [
+      "https://scholar.google.com/citations?user=SCHOLAR_ID",
+      "https://orcid.org/ORCID_ID",
+      "https://github.com/YOUR-USERNAME",
+      "https://www.linkedin.com/in/YOUR-USERNAME/"
+    ]
+  }
+  </script>
+</head>
 <body>
-  <h1>Farah Victoria Wallauer</h1>
-  <p>Welcome to my website!</p>
-  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
-</body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header>
+    <div class="container">
+      <nav aria-label="Primary">
+        <a class="brand" href="#">YOUR NAME</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#software">Software</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#talks">Talks</a>
+        <a href="#cv">CV</a>
+        <a class="cta" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
+  <main id="content" class="container">
+    <!-- HERO / INTRO -->
+    <section class="hero">
+      <div style="display:flex; gap:1rem; align-items:center; flex-wrap:wrap;">
+        <img src="assets/profile.jpg" alt="Portrait of YOUR NAME" />
+        <div>
+          <h1>YOUR NAME</h1>
+          <p>YOUR ROLE — <span class="muted">DEPARTMENT, INSTITUTION</span></p>
+          <p class="muted">Research interests: KEYWORDS (e.g., AGN variability • Spectral timing • Time series)</p>
+          <div class="quicklinks" aria-label="Profile links">
+            <a href="mailto:YOUREMAIL@EXAMPLE.COM">Email</a>
+            <a href="https://scholar.google.com/citations?user=SCHOLAR_ID">Google Scholar</a>
+            <a href="https://orcid.org/ORCID_ID">ORCID</a>
+            <a href="https://github.com/YOUR-USERNAME">GitHub</a>
+            <a href="https://www.linkedin.com/in/YOUR-USERNAME/">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWS / HIGHLIGHTS (optional) -->
+    <section id="news">
+      <h2>News</h2>
+      <ul class="list">
+        <li><span class="tag">AUG 2025</span> Selected for <strong>INTERNSHIP/PROGRAM</strong> at <strong>ORG</strong>.</li>
+        <li><span class="tag">JUL 2025</span> New preprint on <em>TOPIC</em> on arXiv: <a href="#">arXiv:2507.01234</a>.</li>
+        <li><span class="tag">MAY 2025</span> Presented at <strong>CONFERENCE</strong>, <a href="#talks">slides</a>.</li>
+      </ul>
+    </section>
+
+    <!-- LAYOUT: main content + sidebar -->
+    <section class="grid grid-2">
+      <div>
+        <!-- RESEARCH SUMMARY -->
+        <section id="research">
+          <h2>Research</h2>
+          <div class="card">
+            <p>
+              Brief overview (3–6 sentences). What questions do you ask? What methods do you use?
+              Mention datasets, collaborations, or labs. Link to key outputs below.
+            </p>
+            <ul>
+              <li><strong>Project A:</strong> One-liner + link to preprint/code.</li>
+              <li><strong>Project B:</strong> One-liner + link to poster/talk.</li>
+              <li><strong>Project C:</strong> One-liner + link to data release.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- PUBLICATIONS -->
+        <section id="publications">
+          <h2>Selected Publications</h2>
+          <ol class="list" reversed>
+            <!-- Repeat LI per publication. Keep newest first. -->
+            <li>
+              <div class="card">
+                <div><strong>TITLE OF PAPER</strong> <span class="pub-venue">— JOURNAL, YEAR</span></div>
+                <div class="pub-authors">YOUR NAME*, CO-AUTHOR, ...</div>
+                <div>
+                  <a href="#">Paper</a> · <a href="#">arXiv</a> · <a href="#">Code</a> · <a href="#">BibTeX</a>
+                </div>
+                <p class="muted">1–2 sentence summary of the key result.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div class="card">
+                <div><strong>SECOND PAPER TITLE</strong> <span class="pub-venue">— VENUE, YEAR</span></div>
+                <div class="pub-authors">AUTHOR1, YOUR NAME*, AUTHOR3</div>
+                <div>
+                  <a href="#">Paper</a> · <a href="#">arXiv</a> · <a href="#">Slides</a>
+                </div>
+              </div>
+            </li>
+          </ol>
+          <p class="muted">* indicates corresponding or lead student author.</p>
+        </section>
+
+        <!-- SOFTWARE / DATASETS -->
+        <section id="software">
+          <h2>Software & Data</h2>
+          <ul class="list">
+            <li class="card">
+              <strong>REPO NAME</strong> — Short description. <a href="https://github.com/YOUR-USERNAME/REPO">GitHub</a> · <a href="#">Docs</a> · <a href="#">PyPI</a>
+            </li>
+            <li class="card">
+              <strong>DATASET NAME</strong> — Short description. <a href="#">DOI</a> · <a href="#">Metadata</a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- TEACHING / MENTORING -->
+        <section id="teaching">
+          <h2>Teaching & Mentoring</h2>
+          <ul class="list">
+            <li class="card"><strong>COURSE CODE — COURSE NAME</strong> (TERM YEAR) — Role: TA/Instructor. Topics: ... Materials: <a href="#">syllabus</a>.</li>
+            <li class="card"><strong>Mentoring</strong>: Names (with permission), project topics, outcomes.</li>
+          </ul>
+        </section>
+
+        <!-- TALKS -->
+        <section id="talks">
+          <h2>Talks & Posters</h2>
+          <ul class="list">
+            <li class="card"><strong>TITLE</strong> — EVENT (CITY, DATE). <a href="#">Slides</a> · <a href="#">Poster</a> · <a href="#">Recording</a></li>
+            <li class="card"><strong>Another talk</strong> — VENUE (DATE). <a href="#">Slides</a></li>
+          </ul>
+        </section>
+
+        <!-- SERVICE (optional) -->
+        <section id="service">
+          <h2>Service</h2>
+          <ul class="list">
+            <li class="card">Reviewer for JOURNAL, organizer of SEMINAR, outreach at PROGRAM, student rep at COMMITTEE.</li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside aria-label="Sidebar">
+        <!-- CONTACT CARD -->
+        <section id="contact" class="card">
+          <h2>Contact</h2>
+          <address>
+            <div><strong>YOUR NAME</strong></div>
+            <div>DEPT, INSTITUTION</div>
+            <div>CITY, COUNTRY</div>
+            <div><a href="mailto:YOUREMAIL@EXAMPLE.COM">YOUREMAIL@EXAMPLE.COM</a></div>
+            <div>Office: ROOM · Office hours: DAY/TIME</div>
+          </address>
+        </section>
+
+        <!-- CV -->
+        <section id="cv" class="card">
+          <h2>CV</h2>
+          <p><a href="assets/CV.pdf" download>Download CV (PDF)</a></p>
+          <ul class="list">
+            <li><strong>Education</strong>: DEGREE, INSTITUTION (YEAR–YEAR)</li>
+            <li><strong>Awards</strong>: PRIZE (YEAR)</li>
+            <li><strong>Skills</strong>: Python, LaTeX, C/C++, etc.</li>
+          </ul>
+        </section>
+
+        <!-- LINKS -->
+        <section class="card">
+          <h2>Links</h2>
+          <ul class="list">
+            <li><a href="https://scholar.google.com/citations?user=SCHOLAR_ID">Google Scholar</a></li>
+            <li><a href="https://orcid.org/ORCID_ID">ORCID</a></li>
+            <li><a href="https://github.com/YOUR-USERNAME">GitHub</a></li>
+            <li><a href="https://www.semanticscholar.org/">Semantic Scholar</a></li>
+          </ul>
+        </section>
+      </aside>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div>
+        © <span id="year"></span> YOUR NAME. Built with plain HTML/CSS. Hosted on GitHub Pages.
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Auto-update copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
